@@ -12,10 +12,9 @@
                     <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
-                        <div>
-                            <input type="file" class="col-md-4 col-form-label text-md-end" accept="image/jpeg,image/png" required>
+                        <div class="row mb-3">
+                            <input type="file" name="image" class="col-md-4 col-form-label text-md-end" accept="image/jpeg,image/png" required>
                         </div>
-
 
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>

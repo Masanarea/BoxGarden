@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 // use App\Http\Controllers\Auth\Registered;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Storage;
 
 class RegisterController extends Controller
 {
@@ -95,11 +96,28 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         // 画像アップロード機能追加
-        dd($request->all());
+        // dd($request->all());
+        // 文字列を受け取る場合
+        // $request->input('name');
+        // 写真の場合
+        // まず名前受け取り
+        $fileName = $request->file('image')->getClientOriginalName();
+        // ストレージクラス（storage）画像やファイル操作を簡単にしてくれる！使うことでS3とかに簡単に送れる
+        // フォルダーを指定して画像を保存
+        Storage::putFileAs(
+            'public/images',
+            $request->file('image'),
+            $fileName
+        );
+        $fullFilePath = '/storage/images/'. $fileName;
+
+        $data =$request->all();
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'img_url' => $fullFilePath,
         ]);
     }
 }

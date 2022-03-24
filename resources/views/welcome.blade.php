@@ -7,8 +7,8 @@
 	    <div id="map" style="height:500px">
 	    </div>
 
-        <script src="{{ asset('/js/result.js') }}"></script>
-         {{-- <script src="{{ mix('js/result.js') }}" defer></script> --}}
+        {{-- <script src="{{ asset('/js/result.js') }}"></script> --}}
+         <script src="{{ mix('js/result.js') }}" defer></script>
         {{-- scr属性でhttps://maps.googleapis.com/maps/api/js を指定
         ?language=ja → 言語を日本語に設定
         &region=JP → 地域を日本に設定

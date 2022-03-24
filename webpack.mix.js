@@ -34,5 +34,6 @@ const mix = require('laravel-mix');
 //   .version();
 
 
-mix.js('resources/js/app.js', 'public/js')
-   .js('resources/js/result.js', 'public/js')
+mix.copy('resources/js/app.js', 'public/js')
+   .copy('resources/js/result.js', 'public/js')
+    .version();

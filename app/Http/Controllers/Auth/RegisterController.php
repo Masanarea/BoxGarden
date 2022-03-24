@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+// use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+// use App\Http\Controllers\Auth\Registered;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -56,14 +60,42 @@ class RegisterController extends Controller
         ]);
     }
 
+    // RegistersUsers トレイト内のregisterメゾットをオーバーライドする！
+    // 基本laravel/ui内のものは変更しないルールがあるため
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request)));
+
+        $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+        ? new JsonResponse([], 201)
+        : redirect($this->redirectPath());
+    }
+
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    // protected function create(array $data)
+    protected function create(Request $request)
     {
+        // 画像アップロード機能追加
+        dd($request->all());
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

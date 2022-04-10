@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SwipeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::group(['middleware' => 'auth'],function(){
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+    Route::post('/swipes', [SwipeController::class, 'store'])->name('swipes.store');
 });
 
 

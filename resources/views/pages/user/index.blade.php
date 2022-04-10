@@ -5,6 +5,27 @@
     {{-- <?php dd($user); ?> --}}
     @if(is_null($user))
     <p class="text-center">お前の（周りの）ユーザー居ねえから！</p>
+    {{-- <ul class="navbar-nav mr-auto"> --}}
+                            {{-- @auth --}}
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            {{-- @endauth --}}
+                        {{-- </ul> --}}
     @endif
 
     @if(!is_null($user))

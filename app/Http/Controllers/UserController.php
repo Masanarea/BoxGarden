@@ -33,4 +33,9 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+
+    public function logout()
+    {
+        return view('layouts.app');
+    }
 }

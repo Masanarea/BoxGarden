@@ -73,6 +73,7 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
+        // $request->all() を $request に、またregister をオーバーライド
         event(new Registered($user = $this->create($request)));
 
         $this->guard()->login($user);

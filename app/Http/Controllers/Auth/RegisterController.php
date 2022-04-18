@@ -73,7 +73,8 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
 
-        // $request->all() を $request に、またregister をオーバーライド
+        // $request->all() を $request に、またregister をオーバーライド,理由は$request->all() の場合、配列で渡してしまうから
+        // 配列で何かしら表示したい場合でも $request でまずは受け取っておいて、その後今回のように $request $request->all() で受け取れば何も問題なく受け取れるし、より汎用性がある
         event(new Registered($user = $this->create($request)));
 
         $this->guard()->login($user);
@@ -102,6 +103,7 @@ class RegisterController extends Controller
         // $request->input('name');
         // 写真の場合
         // まず名前受け取り
+        // getClientOriginalName() でオリジナルの名前を受け取る
         $fileName = $request->file('image')->getClientOriginalName();
         // ストレージクラス（storage）画像やファイル操作を簡単にしてくれる！使うことでS3とかに簡単に送れる
         // フォルダーを指定して画像を保存

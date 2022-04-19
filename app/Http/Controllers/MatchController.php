@@ -23,7 +23,8 @@ class MatchController extends Controller
 
         // dd($matchedUsers);
 
-        return view('match.match.index', [
+        // これ多分違う！
+        return view('pages.match.index', [
             '$matchedUsers' => $matchedUsers
         ]);
     }

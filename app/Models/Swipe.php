@@ -15,6 +15,7 @@ class Swipe extends Model
         'is_like',
     ];
 
+    // https://readouble.com/laravel/8.x/ja/eloquent-relationships.html
     public function toUser(){
         return $this->belongsTo('\App\Models\User','to_user_id','id');
     }

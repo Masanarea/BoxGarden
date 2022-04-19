@@ -74,7 +74,7 @@
                                 @endif
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('match.index') }}">
+                                    <a class="nav-link" href="{{ route('matches.index') }}">
                                         <i class="fa fa-comments" aria-hidden="true"></i>
                                     </a>
                                 </li>

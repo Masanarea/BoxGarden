@@ -104,16 +104,25 @@ class RegisterController extends Controller
         // 写真の場合
         // まず名前受け取り
         // getClientOriginalName() でオリジナルの名前を受け取る
+        // ただし，悪意のあるユーザーによりファイル名や拡張子が改竄される可能性があるため，
+        // getClientOriginalNameとgetClientOriginalExtensionメソッドは
+        // 安全であると考えられないことに注意してください。
+        // そのため，アップロードされたファイルの名前と拡張子を取得するには，
+        // 通常，hashNameメソッドとextensionメソッドを使用するべきです。
         $fileName = $request->file('image')->getClientOriginalName();
         // ストレージクラス（storage）画像やファイル操作を簡単にしてくれる！使うことでS3とかに簡単に送れる
         // フォルダーを指定して画像を保存
+        // 使い方は公式より断然キータの記事の方がわかりやすかった！
         Storage::putFileAs(
             'public/images',
             $request->file('image'),
+            // 拡張子なし、名前のみだが、ハッシュ化していないため安全でなくやや危ない
             $fileName
         );
         $fullFilePath = '/storage/images/'. $fileName;
 
+        // func register() で $request->all() を
+        //  $request にしたため、 追加で記述剃ることになった
         $data =$request->all();
 
         return User::create([

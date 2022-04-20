@@ -29,12 +29,17 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
                             @auth
+                                {{-- <a href="#">テストん１</a> --}}
                                 <li class="nav-item dropdown">
+                                    {{-- <a href="#">テストん０</a> --}}
                                     <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    {{-- <a href="#">テストん２</a> --}}
+
+                                    {{-- この下（divタグ）をつけるとエラーになる、ログインできなくなるよー --}}
+                                    {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> --}}
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
@@ -44,8 +49,12 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
-                                    </div>
+                                    {{-- </div> --}}
+
+                                    {{-- <a href="#">テストん３</a> --}}
+
                                 </li>
+                                {{-- <a href="#">テストん</a> --}}
                             @endauth
                         </ul>
                         {{-- Center Logo --}}
@@ -94,6 +103,8 @@
         <div class="tbgwrap">
             @yield('content')
         </div>
+        <div>kowkfokw</div>
+        <?php dd(Auth::check()); ?>
     </div>
 </div>
 </body>

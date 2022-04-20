@@ -4,8 +4,9 @@
 <div class="p-user-index">
     {{-- <?php dd($user); ?> --}}
     {{-- <?php dd(Auth::check()); ?> --}}
+    {{-- <?php dd(Auth::user()); ?> --}}
     @if(is_null($user))
-            <p class="text-center">お前の（周りの）ユーザー居ねえから！</p>
+            <p class="text-center">お前の（周りの）ユーザー居ねえから！というのは冗談でユーザーを全員きむワイプし終わった状態</p>
             {{-- <ul class="navbar-nav mr-auto"> --}}
                                     {{-- @auth --}}
                                         {{-- <li class="nav-item dropdown">

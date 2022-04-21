@@ -103,7 +103,7 @@
         <div class="tbgwrap">
             @yield('content')
         </div>
-        <div>*layouts/app.blade.php</div>
+        <div>*layouts/app.blade.php(デバック用！🤔)</div>
         <div>↓result/dd(Auth::check());</div>
         <?php dd(Auth::check()); ?>
     </div>

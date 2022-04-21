@@ -1,64 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+閲覧いただきありがとうございます。
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# URL 一覧  
 
-## About Laravel
+- **ポートフォリオ (PC専用)**  
+サイトURL  
+https://www.laravelvueport.link/login  
+ポートフォリオ動画(２分)  
+https://www.instagram.com/p/CbJUAK3hNEb/
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **GitHub**  
+https://github.com/Masanarea/portfolio.git
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Instagram(ポートフォリオ以外の Web アプリ作品投稿、アウトプット用)**  
+https://instagram.com/masa_626_/
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+# アプリケーション概要  
+**アウトプット用のWebApp(箱庭)です。**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## アプリケーションの制作経緯  
+アウトプットの学習効果は言わずもがな高いですが、失敗しても問題なくどんどうチャレンジしていける練習用の個人用のWebAppがあったらなぁと思い作成しました。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+## アプリケーション詳細
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+こちらのアプリで試したこと一覧
 
-## Contributing
+1.  Introduce GoogleMap API
+1.  Tinder (PHP /FW/Laravel)
+1. 今後実装
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- dd()の練習
+- 今後
 
-## Security Vulnerabilities
+動画版はこちらから  
+https://www.instagram.com
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## 使用技術について
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+フロントエンドを JS(Vue.js) 、 バックエンドをPHP(Laravel)で作成し、Webアプリを作成しました。
+
+
+## **技術選定の基準**
+- **バックエンドの言語**  
+『学習教材が豊富』なこと、個人開発だけでなく今後業務で使うとなった場合にも『長期的に使用していけるかどうか』、の二点を主に基準としました。
+まず『学習教材の豊富さ』についてですが、学習教材が豊富なバックエンドの言語はPHP,Ruby。このうち長期的に使用していけるかどうかについて考えた際にGitHubのフレームワークのスター数、Googleトレンド等を参照するとこの条件に最も当てはまるのは、バックエンド言語だとPHPであり、現在（2022年3月）Laravel-11がリリースされるのが確定していることも含めて、PHPのフレームワークにLaravelを使うことを決めました。尚、バージョンについてですが、アプリ開発を始めた日（2021年12月24日頃）のLTS(Long Term Support)はLaravel6であり、Laravel6の情報量もかなり多いことからLaravel6 でのアプリ開発をしていきました。
+
+- **フロントエンド**  
+ページ表示速度を早くするために、 Vue.js、React のどちらかを使うことにしましたが、『学習教材が豊富』 なことと、学習コストを考慮して Vue.js を選びました。
+Laravelの公式でもVue.jsの方を採用している事も基準の１つでした。
+またVue.js を使うにあたって、Ajaxによる非同期通信では、Laravelのpackage.jsonに標準で記載されているaxios(JavaScriptの外部ライブラリ)を使用しました。
+
+
+
+
+
+## **具体的なモダンな技術一覧**
+
+  - **Laravel + Vue.js の構成**
+
+## **使用技術の詳細(バージョンや使用ツール)**
+- **フロントエンド**
+
+  - **Vue.js 2.6.14**
+  - **JavaScript**
+  - **HTML / SCC /**
+  - **BootStrap**
+
+- **バックエンド**
+
+  - **PHP 7.4.1**
+  - **Laravel 6.20.26**
+  - **PHPUnit 9.5.16**
+
+
+- **その他使用ツール**
+  - Intelチップ搭載 MacBook Air / 　MacOS version 12.1 (ツールではありませんが) 
+  - Visual Studio Code
+  - SourceTree(コマンドでGitを使うこともありましたが、主に SourceTree を使用)
+  - GitHub
+  - Notion （開発中に参考になった記事を管理）
+
+
+
+
+## 機能一覧
+
+- **一般ユーザー登録関連**
+
+  - **CUDR**
+  - **開発フローの習得**
+  - **今後**
+
+
+- **今後**
+
+
+まだまだ課題も多いのですが、一つずつ改善してよりブラッシュアップしていきたく思います。

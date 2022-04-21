@@ -6,7 +6,8 @@
     {{-- <?php dd(Auth::check()); ?> --}}
     {{-- <?php dd(Auth::user()); ?> --}}
     @if(is_null($user))
-            <p class="text-center">is_null($user)の結果がtrueで、ユーザーを全員きむワイプし終わった状態</p>
+            <p class="text-center"> 全ユーザーとの相性を診断しました！😆</p>
+            <p class="text-center">( The result of /is_null($user)/ is true)</p>
             {{-- <ul class="navbar-nav mr-auto"> --}}
                                     {{-- @auth --}}
                                         {{-- <li class="nav-item dropdown">

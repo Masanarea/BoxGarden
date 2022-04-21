@@ -4,6 +4,7 @@
     <div class="p-match-index">
         <div class="container">
             <div class="row">
+            <?php dd($matchedUsers) ?>
                 @foreach($matchedUsers as $matchedUser)
                 {{-- <?php dd($matchedUsers->toUser) ?> --}}
                 <div class="col-md-12 mb-3">

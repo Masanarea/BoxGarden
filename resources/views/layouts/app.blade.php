@@ -32,9 +32,9 @@
                                 {{-- <a href="#">テストん１</a> --}}
                                 <li class="nav-item dropdown">
                                     {{-- <a href="#">テストん０</a> --}}
-                                    <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{-- <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         <i class="fa fa-cog" aria-hidden="true"></i>
-                                    </a>
+                                    </a> --}}
 
                                     {{-- <a href="#">テストん２</a> --}}
 
@@ -103,7 +103,8 @@
         <div class="tbgwrap">
             @yield('content')
         </div>
-        <div>kowkfokw</div>
+        <div>*layouts/app.blade.php</div>
+        <div>↓result/dd(Auth::check());</div>
         <?php dd(Auth::check()); ?>
     </div>
 </div>

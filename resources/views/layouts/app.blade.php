@@ -105,7 +105,7 @@
         </div>
         <div>*layouts/app.blade.php(デバック用！🤔)</div>
         <div>↓result/dd(Auth::check());</div>
-        <?php dd(Auth::check()); ?>
+        {{-- <?php dd(Auth::check()); ?> --}}
     </div>
 </div>
 </body>
